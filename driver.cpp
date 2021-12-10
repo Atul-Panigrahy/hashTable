@@ -10,36 +10,46 @@ vector<float> readInput();
 
 int main()
 {
-    HashTableDemo d(29);
-    float amt;
-    float eamt;
-    int cont;
+    int hashTableSize = 29 ;
+    HashTableDemo hashObject(hashTableSize);
+
+    float userInput;
+    int userChoice;
     vector<float> numbers = readInput();
+
+    /*
+        There is some error in reading input file
+    */
+    if(numbers.size() == 0 )
+    {
+        return 1 ;
+    }
+
 
     for (int i = 0; i < numbers.size(); i++)
     {
-        d.insert(numbers[i]);
+        hashObject.insert(numbers[i]);
     }
 
-    d.printInfo();
+    hashObject.printInfo();
 
     while (true)
     {
         cout << "\nEnter Amount:" << endl ;
         cout << "$" ;
-        cin >> eamt;
-        if (d.find(eamt) == -1)
+        cin >> userInput;
+        if (hashObject.find(userInput) == -1)
         {
             cout << "\nInvalid Data";
         }
         else
         {
-            cout << endl << d.find(eamt);
+            cout << endl << hashObject.find(userInput);
         }
         cout << "\nDo you want to continue\n"
              << "1 for Yes\n2 for No\n";
-        cin >> cont;
-        if (cont == 2)
+        cin >> userChoice;
+        if (userChoice == 2)
         {
             break;
         }
@@ -47,6 +57,7 @@ int main()
 
     //halt the program for 10 seconds
     Sleep(10);
+
     return 0;
 }
 
