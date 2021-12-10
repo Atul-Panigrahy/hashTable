@@ -41,11 +41,13 @@ int main()
         cin >> userInput;
         if (hashObject.find(userInput) == -1)
         {
-            cout << "\nInvalid Data";
+            cout << endl ;
+            cout<< "Invalid Data" << endl ;
         }
         else
         {
-            cout << endl << hashObject.find(userInput);
+            cout << endl ;
+            cout<< "The element is found at index: " << hashObject.find(userInput);
         }
         cout << "\nDo you want to continue\n"
              << "1 for Yes\n2 for No\n";
@@ -53,6 +55,18 @@ int main()
         if (userChoice == 2)
         {
             break;
+        }
+        else if (userChoice == 1)
+        {
+            continue;
+        }
+        else
+        {
+           cout << "enter either 1 or 2" << endl ;
+           do{
+               cin >> userChoice;
+           }while(userChoice !=1 && userChoice!=2 ) ;
+
         }
     }
 
