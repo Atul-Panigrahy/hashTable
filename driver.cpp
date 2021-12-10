@@ -25,7 +25,8 @@ int main()
 
     while (true)
     {
-        cout << "\nEnter Amount:";
+        cout << "\nEnter Amount:" << endl ;
+        cout << "$" ;
         cin >> eamt;
         if (d.find(eamt) == -1)
         {
@@ -33,8 +34,7 @@ int main()
         }
         else
         {
-            cout << endl
-                 << d.find(eamt);
+            cout << endl << d.find(eamt);
         }
         cout << "\nDo you want to continue\n"
              << "1 for Yes\n2 for No\n";
