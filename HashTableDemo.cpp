@@ -3,6 +3,7 @@
 
 HashTableDemo::HashTableDemo(int input_)
 {
+    std::cout << "constructor called\n" ;
     tableSize = input_;
     hashTable = new float[tableSize];
 
@@ -24,18 +25,19 @@ HashTableDemo::HashTableDemo(int input_)
 
 void HashTableDemo::insert(float amount)
 {   
-    count++;
+    count++; 
+    std::cout << "DEBUG: count : " << count ; 
     int w = (int)amount;
     float f = amount - w;
 
     int hashcode = (int)((m * w) + (n * f)) % tableSize;
 
     // implement collision handling here
-    
+
     hashTable[hashcode] = amount;
 }
 
-void HashTableDemo:: printInfo ()
+void HashTableDemo::printInfo ()
 {
     std::cout << "Number of data items loaded: " << count << std::endl ;
     std::cout << "Load factor: " << loadFactor << std::endl ;

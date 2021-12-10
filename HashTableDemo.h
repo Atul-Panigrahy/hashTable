@@ -1,5 +1,5 @@
-#ifndef HASHTABLEDEMO.H
-#define HASHTABLEDEMO .H
+#ifndef HASHTABLEDEMO
+#define HASHTABLEDEMO
 
 class HashTableDemo
 {
@@ -8,10 +8,10 @@ public:
     int count;
     int tableSize, m, n;
     int collisions, loadFactor;
-    HashTableDemo(int n) {}
-    void insert(float amount) {}
-    void printInfo(); 
-    int find(float amount) {}
+    HashTableDemo(int n) {} ;
+    void insert(float amount) {} ;
+    void printInfo(){}; 
+    int find(float amount) {};
 };
 
 #endif // HASHTABLEDEMO

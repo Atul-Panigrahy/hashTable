@@ -31,6 +31,7 @@ int main()
         hashObject.insert(numbers[i]);
     }
 
+    
     hashObject.printInfo();
 
     while (true)
@@ -73,8 +74,7 @@ vector<float> readInput()
         while (getline(newfile, tp))
         {
             //read data from file object and put it into string.
-            //cout << tp << "\n"; //print the data of the string
-            float num_float = std::stof(tp.substr(1, tp.length() - 1));
+            float num_float = stof(tp.substr(1, tp.length() - 1));
             numbers.push_back(num_float);
         }
         newfile.close(); //close the file object.
