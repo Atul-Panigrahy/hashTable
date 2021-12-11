@@ -68,10 +68,19 @@ int HashTableDemo::find(float amount)
 {
     int w = (int)amount;
     float f = amount - w;
-    if (hashTable[(int)((m * w) + (n * f)) % tableSize] == amount)
+
+    int hashcode = (int)((m * w) + (n * f)) % tableSize;
+
+    for (int j = 0; j < tableSize; j++)
     {
-        return (int)((m * w) + (n * f)) % tableSize;
+        // Computing the new hash value
+        int t = (hashcode + j * j) % tableSize;
+        if (hashTable[t] == amount)
+        {
+            return t ;
+        }
     }
+    
     return -1;
 }
 
